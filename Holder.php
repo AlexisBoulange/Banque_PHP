@@ -12,7 +12,7 @@ Class Holder{
         $this->firstname = $firstname;
         $this->birthDate = $birthDate;
         $this->city = $city;
-
+        $this->accounts = [];
     }
     /**
      * Get the value of name
@@ -94,6 +94,26 @@ Class Holder{
         return $this;
     }
 
+    /**
+     * Get the value of accounts
+     */ 
+    public function getAccounts()
+    {
+        return $this->accounts;
+    }
+
+    /**
+     * Set the value of accounts
+     *
+     * @return  self
+     */ 
+    public function setAccounts($accounts)
+    {
+        $this->accounts = $accounts;
+
+        return $this;
+    }
+
     public function getAge(){
         $date1 = new DateTime ("now");
         $date2 = new DateTime ($this->getBirthDate());
@@ -102,9 +122,26 @@ Class Holder{
         return $age;
         
     }
+    
+    public function addAccount($account){
+        $this->accounts[] = $account;
+    }
 
+    // function __toString(){
+    //     return $this->firstname." ".$this->name. ", ".$this->getAge(). " ans, à ".$this->city;
+    // }
     function __toString(){
-        return $this->firstname." ".$this->name. ", ".$this->getAge(). " ans, à ".$this->city;
+        $accountsHolder = "";
+        foreach($this->accounts as $account){
+            $accountsHolder .= $account."<br>";
+        }
+        return "<div>
+                <p>".$this->name."</p>
+                <p>".$this->firstname."</p>
+                <p>".$this->birthDate." (".$this->getAge(). " ans)</p>
+                <p>".$this->city."</p>
+
+                </div>";
     }
 
 }
