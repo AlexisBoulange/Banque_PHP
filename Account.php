@@ -11,6 +11,7 @@ Class Account{
         $this->soldeIni = $soldeIni;
         $this->devise = $devise;
         $this->titulaire = $titulaire;
+        $titulaire->addAccount($this);
     }
 
     
@@ -93,6 +94,10 @@ Class Account{
         $this->titulaire = $titulaire;
 
         return $this;
+    }
+
+    public function credit($montant){
+        $this->soldeIni += $montant;
     }
 
     function __toString(){
