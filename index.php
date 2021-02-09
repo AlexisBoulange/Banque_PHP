@@ -1,3 +1,22 @@
+<?php
+
+require 'Account.php';
+require 'Holder.php';
+
+//Holders
+
+$h1 = new Holder ("Doe", "John", "09-06-1975", "Lyon");
+$h2 = new Holder ("Darc", "Jeanne", "10-08-1986", "Paris");
+
+//Accounts
+
+
+$a1 = new Account ('Compte courant', '2600', '€', $h1);
+$a2 = new Account ('Livret A', '50', '€', $h1);
+$a3 = new Account ('Compte courant', '1300', '€', $h2);
+
+echo $h1;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,21 +26,19 @@
     <title>Document</title>
 </head>
 <body>
-    
-<?php
-
-require 'Account.php';
-require 'Holder.php';
-
-$h1 = new Holder ("Doe", "John", "9/6/1975", "Lyon");
-$a1 = new Account ('Compte courant', '2600', '€', $h1);
-
-echo $a1 ;
-
-
-
-?>
-
-
+    <table>
+        <thead>
+            <tr>
+            <th>NOM</th>
+            <th>PRENOM</th>
+            <th>DATE DE NAISSANCE</th>
+            <th>VILLE</th>
+            <th>SOLDE (COMPTE)</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+        </tbody>
+    </table>
 </body>
 </html>
