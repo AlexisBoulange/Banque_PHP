@@ -15,7 +15,10 @@ $a1 = new Account ('Compte courant', '2600', '€', $h1);
 $a2 = new Account ('Livret A', '50', '€', $h1);
 $a3 = new Account ('Compte courant', '1300', '€', $h2);
 
-echo $h1;
+
+$a1->virement(150, $a2);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +40,7 @@ echo $h1;
             </tr>
         </thead>
         <tbody>
-        
+        <?= $h1 ?>
         </tbody>
     </table>
 </body>
