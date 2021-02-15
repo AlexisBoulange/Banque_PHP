@@ -96,12 +96,21 @@ Class Account{
         return $this;
     }
 
+
     public function credit($montant){
         $this->soldeIni += $montant;
     }
+    public function debit($montant){
+        $this->soldeIni -= $montant;
+    }
+    public function virement($montant, $cible){
+        $this->debit($montant);
+        $cible->credit($montant);
+    }
+
 
     function __toString(){
-        return $this->libelle." ".$this->soldeIni. " ".$this->devise. " ".$this->titulaire;
+        return $this->libelle." ".$this->soldeIni. " ".$this->devise;
     }
 }
 ?>
