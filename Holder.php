@@ -135,13 +135,13 @@ Class Holder{
         foreach($this->accounts as $account){
             $accountsHolder .= $account."<br>";
         }
-        return "<div>
-                <p>".$this->name."</p>
-                <p>".$this->firstname."</p>
-                <p>".$this->birthDate." (".$this->getAge(). " ans)</p>
-                <p>".$this->city."</p>
-
-                </div>";
+        return "<tr>
+                <td>".$this->name."<td>
+                <td>".$this->firstname."<td>
+                <td>".$this->birthDate." (".$this->getAge(). " ans)<td>
+                <td>".$this->city."<td>
+                <td>".$accountsHolder."<td)
+                </tr>";
     }
 
 }
